@@ -1,19 +1,25 @@
- 
- main img {
-    position: relative;
-    width: 100%;
-     
+  body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .header h1{
+    
+    
+    text-align: center;
+    color: #0b0909;
+    
+    
+    
+  }
+
+.imagem {
+    align-items: center;
+    
+    
 }
 
-main {
-    background-image: url(/image/5fe62d64fee91c7edb0cce32ff5dd63c.jpg);
-    position: relative;
-    display: flex;
-    width: 50vw;
-    height: 100vh;
-    justify-content:center;
-    align-items: center;
-}
  
  
 .conteudo{
