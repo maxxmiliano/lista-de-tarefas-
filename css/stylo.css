@@ -3,32 +3,20 @@
     padding: 0;
     box-sizing: border-box;
   }
-
-  .header h1{
-    
-    
-    text-align: center;
-    color: #0b0909;
-    
-    
-    
+  body{
+    background-image: url(/image/5fe62d64fee91c7edb0cce32ff5dd63c.jpg);
   }
 
-.imagem {
-    align-items: center;
-    
-    
-}
-
- 
  
 .conteudo{
+    
     margin: 0 auto;
     width: 100%;
     max-width: 450px;
     margin-top: 50px;
     margin-bottom: 50px;
-    background: #2b2a2a;
+    background: #3f0424;
+    opacity: 0.9;
     padding: 55px;
     border-radius: 12px;
     z-index: 1;
