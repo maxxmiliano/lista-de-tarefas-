@@ -13,11 +13,11 @@
     margin: 0 auto;
     width: 100%;
     max-width: 450px;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 50px;
     background: #3f0424;
     opacity: 0.9;
-    padding: 50px;
+    padding: 80px;
     border-radius: 12px;
     z-index: 1;
 }
@@ -30,7 +30,7 @@
     width: 350px;
     padding: 15px;
     border-radius: 12px;
-    border: 1px solid #d4cbcb;
+    border: 1px solid #191818;
     outline: none;
     font-size: 1.2rem;
     background: #191818;
@@ -40,38 +40,49 @@
     width: 45px;
     border-radius: 12px;
     border: 1px solid #191818;
-    background: #191818;
-    color: #fff;
+    background: #654c4c;
+    color: #f04242;
     outline: none;
-}
-.topo button:hove{
-    background: #1f1e1e;
     cursor: pointer;
 }
-#listatarefas {
+.topo.button:hover{
+    background: #972525;
+    
+}
+#listaTarefas {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
-#listatarefas li{
+#listaTarefas li{
     padding: 20px;
     background: #191818;
     border-radius: 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 25px;
 }
-.btnacao{
+.btnAcao{
     border-radius: 20px;
     border: 1px solid #191818;
     width: 38px;
     height: 38px;
     margin-right: 8px;
     cursor: pointer;
-    background: #2b2a2a;
-    color: #fff;
+    background: #f2ecec;
+    color: #f04242;
+    
 
 }
-.btnacao:hover{
+span {
+    color: #fff;
+    font-size: 22px;
 
+}
+::placeholder {
+    color: #fff;
+}
+.btnAcao:hover{
+ background: #2b2a2a;
 }
