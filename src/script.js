@@ -33,6 +33,7 @@ function adicionarTarefa(tarefa) {
 function criarTagLI(tarefa) {
 
     let li = document.createElement('li');
+    li.id = tarefa.id;
 
     let span = document.createElement('span');
     span.classList.add('textoTarefa');
@@ -63,5 +64,11 @@ function editar(idTarefa){
     alert(idTarefa);
 }
 function excluir(idTarefa){
-    alert(idTarefa);
+    let confirmacao = window.confirm('deseja realmente excluir?');
+    if(confirmacao) {
+        let li = document.getElementById(''+ idTarefa +'');
+        if(li) {
+            listaTarefas.removeChild(li);
+        }
+    }
 }
