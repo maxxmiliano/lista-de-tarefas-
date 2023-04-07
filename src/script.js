@@ -1,6 +1,9 @@
 let inputNovaTarefa = document.querySelector('#inputNovaTarefa');
 let btnAddTarefa = document.querySelector('#btnAddTarefa');
 let listaTarefas = document.querySelector('#listaTarefas');
+let janelaEdicao = document.querySelector('#janelaEdicao');
+let janelaEdicaoFundo = document.querySelector('#janelaEdicaoFundo');
+let janelaEdicaobtnFechar = document.querySelector('#janelaEdicaobtnFechar');
 
 inputNovaTarefa.addEventListener('keypress', (e) => {
     if(e.keyCode == 13) {
@@ -10,6 +13,9 @@ inputNovaTarefa.addEventListener('keypress', (e) => {
         }
         adicionarTarefa(tarefa);
     }
+});
+janelaEdicaobtnFechar.addEventListener('click', (e) => {
+    alternarJanelaEdicao();
 });
 
 btnAddTarefa.addEventListener('click', (e) =>{
@@ -61,12 +67,21 @@ function criarTagLI(tarefa) {
 }
 
 function editar(idTarefa){
-    alert(idTarefa);
+    let  li = document.getElementById(''+ idTarefa +'');
+    if(li) {
+        idTarefaEdicao.innerHTML = "#" + idTarefa;
+        inputTarefaNomeEdicao.value = li.innerText;
+        alternarJanelaEdicao();
+    }
+    else {
+        alert('elemento HTML nao encontrado');
+    }
+    
 }
 function excluir(idTarefa){
     let confirmacao = window.confirm('deseja realmente excluir?');
     if(confirmacao) {
-        let li = document.getElementById(''+ idTarefa +'');
+        let li = document.getElementById(''+ idTarefa + '');
         if(li) {
             listaTarefas.removeChild(li);
         }

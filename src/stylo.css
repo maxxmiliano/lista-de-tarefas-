@@ -86,7 +86,7 @@ span {
 .btnAcao:hover{
  background: #2b2a2a;
 }
-#janelaEdicao{
+#janelaEdicao {
  position: fixed;
  top: 50%;
  left: 50%;
@@ -121,7 +121,7 @@ span {
 display: block !important;
 }
 
-#janetaEdicaobtnfechar {
+#janelaEdicaobtnFechar {
     position: absolute;
     top: -20px;
     right: -14px;
