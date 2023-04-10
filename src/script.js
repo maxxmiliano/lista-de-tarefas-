@@ -4,7 +4,7 @@ let listaTarefas = document.querySelector('#listaTarefas');
 let janelaEdicao = document.querySelector('#janelaEdicao');
 let janelaEdicaoFundo = document.querySelector('#janelaEdicaoFundo');
 let janelaEdicaobtnFechar = document.querySelector('#janelaEdicaobtnFechar');
-
+let btnAtualizarTarefa = document.querySelector('#btnAtualizarTarefa');
 inputNovaTarefa.addEventListener('keypress', (e) => {
     if(e.keyCode == 13) {
         let tarefa = {
@@ -29,6 +29,7 @@ btnAddTarefa.addEventListener('click', (e) =>{
 function gerarId() {
     return Math.floor(Math.random() * 3000);
 }
+
 
 function adicionarTarefa(tarefa) {
     let li = criarTagLI(tarefa);
@@ -65,6 +66,17 @@ function criarTagLI(tarefa) {
     li.appendChild(div);
     return(li);
 }
+
+btnAtualizarTarefa.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let idTarefa = idTarefaEdicao.innerHTML.replace('#', '');
+
+    let tarefa = {
+        nome: inputTarefaNomeEdicao.value,
+        id: idTarefa
+}
+});
 
 function editar(idTarefa){
     let  li = document.getElementById(''+ idTarefa +'');

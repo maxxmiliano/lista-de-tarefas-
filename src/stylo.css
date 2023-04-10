@@ -97,6 +97,7 @@ span {
  width: 415px;
  border-radius: 12px;
  z-index: 200;
+ display: none;
 }
 
 #janelaEdicao.abrir{
@@ -134,7 +135,7 @@ display: block !important;
     color: #972525;
     outline: none;
     cursor: pointer;
-    z-index: 1;
+    
 
 }
 
