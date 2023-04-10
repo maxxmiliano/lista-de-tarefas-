@@ -85,5 +85,8 @@ function excluir(idTarefa){
         if(li) {
             listaTarefas.removeChild(li);
         }
+        else {
+            
+        }
     }
 }
