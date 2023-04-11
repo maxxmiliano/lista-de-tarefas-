@@ -4,15 +4,15 @@
     box-sizing: border-box;
   }
   body{
-    background-image: url(./image/5fe62d64fee91c7edb0cce32ff5dd63c.jpg);
+    background-image: url(/image/5fe62d64fee91c7edb0cce32ff5dd63c.jpg);
   }
 
- 
+
 .conteudo{
     
     margin: 0 auto;
     width: 100%;
-    max-width: 450px;
+    max-width: 650px;
     margin-top: 50px;
     margin-bottom: 50px;
     background: #3f0424;
@@ -21,34 +21,55 @@
     border-radius: 12px;
     z-index: 1;
 }
+
+h3 {
+   /* background: url(/image/R.jpg);
+    -webkit-background-clip: text;
+    background-clip: text;*/
+    -webkit-text-stroke: 1px red;
+    font-family: arial; color: transparent;
+    text-align: center;
+    font-size: 2.9rem;
+    padding-bottom: 0 auto;
+    margin-top: -30px;
+}
+h3:hover{
+    outline: 1px solid rgb(212, 16, 16);
+    outline-offset: 1px;
+    border-radius: 12px;
+}
 .topo{
     display: flex;
     justify-content: space-between;
     margin-bottom: 35px;
 }
 .topo input {
-    width: 350px;
+    width: 450px;
     padding: 15px;
     border-radius: 12px;
-    border: 1px solid #191818;
+    border: 0.5px solid #191818;
     outline: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     background: #191818;
-    color: #fff;
+    color: #f80505;
 }
 .topo button{
     width: 45px;
     border-radius: 12px;
-    border: 1px solid #191818;
+    border: 4px solid #191818;
     background: #654c4c;
-    color: #f04242;
+    color: #030303;
     outline: none;
     cursor: pointer;
-}
-.topo.button:hover{
-    background: #972525;
     
 }
+.topo button:hover{
+    background: #5e2525;
+    outline: 2px solid rgb(129, 7, 37);
+    outline-offset: 3px;
+}
+
+
 #listaTarefas {
     list-style-type: none;
     padding: 0;
@@ -71,9 +92,11 @@
     margin-right: 8px;
     cursor: pointer;
     background: #f2ecec;
-    color: #f04242;
+    color: #050505;
+}
+ i {
     
-
+    color:#0a0a0a
 }
 span {
     color: #fff;
@@ -132,11 +155,15 @@ display: block !important;
     border-radius: 50%;
     border: 1px solid #654c4c;
     background: #2f2e2e;
-    color: #972525;
+    color: #f90000;
     outline: none;
     cursor: pointer;
-    
-
+}
+#btnAddTarefa  {
+    width: 15%;
+}
+#btnAddTarefa i {
+    color: #020202;
 }
 
 form {
@@ -169,7 +196,7 @@ form {
     padding: 7px;
     margin-bottom: 10px;
     border-radius: 12px;
-    color: #654c4c;
+    color: #f3f1f1;
     cursor: pointer;
     height: 50px;
     font-size: 1.3rem;
@@ -177,5 +204,6 @@ form {
 
 }
 .frm-linha button :hover{
-    background: #654c4c;
+    background: #f5f1f1;
 }
+
