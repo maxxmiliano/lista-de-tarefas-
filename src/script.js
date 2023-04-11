@@ -5,6 +5,11 @@ let janelaEdicao = document.querySelector('#janelaEdicao');
 let janelaEdicaoFundo = document.querySelector('#janelaEdicaoFundo');
 let janelaEdicaobtnFechar = document.querySelector('#janelaEdicaobtnFechar');
 let btnAtualizarTarefa = document.querySelector('#btnAtualizarTarefa');
+let inputTarefaNomeEdicao = document.querySelector('#inputTarefaNomeEdicao');
+let idTarefaEdicao = document.querySelector('#idTarefaEdicao');
+
+const qtdIdsDisponiveis = Number.MAX_VALUE;
+
 inputNovaTarefa.addEventListener('keypress', (e) => {
     if(e.keyCode == 13) {
         let tarefa = {
@@ -21,13 +26,63 @@ janelaEdicaobtnFechar.addEventListener('click', (e) => {
 btnAddTarefa.addEventListener('click', (e) =>{
     let tarefa = {
         nome:inputNovaTarefa.value,
-        id: gerarId(),
+        id: gerarIdV2(),
      }
      adicionarTarefa(tarefa);
 });
 
+btnAtualizarTarefa.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    let idTarefa = idTarefaEdicao.innerHTML.replace('#', '');
+
+    let tarefa = {
+        nome: inputTarefaNomeEdicao.value,
+        id: idTarefa
+}
+
+let tarefaAtual = document.getElementById(''+idTarefa+'');
+if(tarefaAtual) {
+    let li = criarTagLI(tarefa);
+    listaTarefas.replaceChild(li, tarefaAtual);
+    alternarJanelaEdicao();
+} else {
+    alert('Elemento HTML não encontrado!');
+} 
+});
+
 function gerarId() {
-    return Math.floor(Math.random() * 3000);
+    return Math.floor(Math.random() * qtdIdsDisponiveis);
+}
+
+function gerarIdV2() {
+    return gerarIdUnico();
+}
+function gerarIdUnico() {
+
+    // debugger;
+    let itensDaLista = document.querySelector('#listaTarefas').children;
+    let idsGerados = [];
+
+    for(let i=0;i<itensDaLista.length;i++) {
+        idsGerados.push(itensDaLista[i].id);
+    }
+
+    let contadorIds = 0;
+    let id = gerarId();
+
+    while(contadorIds <= qtdIdsDisponiveis && 
+        idsGerados.indexOf(id.toString()) > -1) {
+            id = gerarId();
+            contadorIds++;
+
+            if(contadorIds >= qtdIdsDisponiveis) {
+                alert("Oops, ficamos sem IDS :/");
+                throw new Error("Acabou os IDs :/");
+            }
+        }
+
+    return id;
 }
 
 
@@ -36,6 +91,8 @@ function adicionarTarefa(tarefa) {
     listaTarefas.appendChild(li);
     inputNovaTarefa.value = '';
 }
+
+
 
 function criarTagLI(tarefa) {
 
@@ -67,16 +124,7 @@ function criarTagLI(tarefa) {
     return(li);
 }
 
-btnAtualizarTarefa.addEventListener('click', (e) => {
-    e.preventDefault();
 
-    let idTarefa = idTarefaEdicao.innerHTML.replace('#', '');
-
-    let tarefa = {
-        nome: inputTarefaNomeEdicao.value,
-        id: idTarefa
-}
-});
 
 function editar(idTarefa){
     let  li = document.getElementById(''+ idTarefa +'');
@@ -101,4 +149,8 @@ function excluir(idTarefa){
             
         }
     }
+}
+function alternarJanelaEdicao() {
+    janelaEdicao.classList.toggle('abrir');
+    janelaEdicaoFundo.classList.toggle('abrir');
 }
